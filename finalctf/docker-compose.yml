@@ -1,0 +1,14 @@
+services:
+  through-the-void:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SESSION_SECRET: "change-this-to-a-long-random-secret"
+      HTTPS_ONLY: "0"
+    volumes:
+      - ctf_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  ctf_data:
